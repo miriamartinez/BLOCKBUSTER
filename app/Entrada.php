@@ -11,7 +11,7 @@ class Entrada extends Model
     protected $fillable = ['id_pelicula','id_formato','id_stand'];
 
 
-    function getTipoPeliculas()
+    function getPeliculas()
     {
         return $this->hasMany('App\Peliculas','id_pelicula','id_pelicula');
     }
