@@ -29,7 +29,7 @@ class PeliculasController extends Controller
     {
         //
         $generos=Generos::all();
-        return view("peliculas.create",compact('generos'));
+        return view("Peliculas.create",compact('generos'));
     }
 
     /**

@@ -15,7 +15,7 @@ class StandsController extends Controller
     public function index()
     {
         $stands=Stands::all();
-        return view("stands.index",compact('stands'));
+        return view("Stands.index",compact('stands'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StandsController extends Controller
     public function create()
     {
         //
-        return view("stands.create");
+        return view("Stands.create");
     }
 
     /**

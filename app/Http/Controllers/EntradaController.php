@@ -31,7 +31,7 @@ class EntradaController extends Controller
         $peliculas=Peliculas::all();
         $formatos=Formatos::all();
         $stands=Stands::all();
-        return view("entradas.created",compact('peliculas','formatos','stands'));
+        return view("Entradas.created",compact('peliculas','formatos','stands'));
     }
 
     /**
@@ -69,7 +69,7 @@ class EntradaController extends Controller
         $peliculas=Peliculas::all();
         $formatos=Formatos::all();
         $stands=Stands::all();
-        return view("Entradas.create",compact('entrada','peliculas','formatos','stands'));
+        return view("Entradas.update",compact('entrada','peliculas','formatos','stands'));
     }
 
     /**
@@ -81,6 +81,7 @@ class EntradaController extends Controller
      */
     public function update(Request $request, Entrada $entrada)
     {
+        //dd($request->all());
         $entrada->update($request->all());
         return redirect("entradas");
     }
