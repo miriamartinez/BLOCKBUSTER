@@ -19,5 +19,6 @@ Route::resources([
     'sexos'=>'SexosController',
     'stands'=>'StandsController',
     'formatos'=>'FormatosController',
-    'peliculas'=>'PeliculasController'
+    'peliculas'=>'PeliculasController',
+    'entradas'=>'EntradaController',
 ]);
