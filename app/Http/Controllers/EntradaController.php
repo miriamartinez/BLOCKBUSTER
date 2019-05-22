@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
-
-
+use App\Peliculas;
+use App\Formatos;
+use App\Stands;
 use App\Entrada;
 use Illuminate\Http\Request;
 
@@ -17,7 +17,8 @@ class EntradaController extends Controller
      */
     public function index()
     {
-        //
+        $entradas=Proyecto::all();
+        return view("Entradas.index",compact('entradas'));
     }
 
     /**
@@ -27,7 +28,10 @@ class EntradaController extends Controller
      */
     public function create()
     {
-        //
+        $peliculas=Peliculas::all();
+        $formatos=Formatos::all();
+        $stands=Stands::all();
+        return view("Entradas.create",compact('tipos','companias','zonas','municipios','estados'));
     }
 
     /**
