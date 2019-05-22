@@ -21,3 +21,7 @@ Route::resources([
     'formatos'=>'FormatosController',
     'peliculas'=>'PeliculasController'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
