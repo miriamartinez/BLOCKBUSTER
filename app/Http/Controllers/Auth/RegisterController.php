@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Clientes;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -63,10 +64,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $clientes=Clientes::create(
+            [
+                'nom' => $data['nom'],
+                'ap' => $data['ap'],
+                'am' => $data['am'],
+                'id_sexo' => $data['id_sexo'],
+            ]
+        );
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'id_cliente'=>$clientes['id_cliente'],
         ]);
     }
 }

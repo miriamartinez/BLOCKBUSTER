@@ -22,3 +22,7 @@ Route::resources([
     'peliculas'=>'PeliculasController',
     'entradas'=>'EntradaController',
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
