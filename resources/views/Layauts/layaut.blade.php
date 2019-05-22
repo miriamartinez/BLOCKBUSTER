@@ -38,6 +38,8 @@
         <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
 
         <li class="nav-item"><a href="{{url("entradas")}}" class="nav-link text-white">Entradas</a></li>
+        <li class="nav-item"><a href="{{url("clientes")}}" class="nav-link text-white">Clientes</a></li>
+
         <li class="nav-item"><a href="{{url("tickets")}}" class="nav-link text-white">Tickets</a></li>
         @guest
             <li class="nav-item">

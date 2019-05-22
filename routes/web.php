@@ -22,7 +22,8 @@ Route::resources([
     'peliculas'=>'PeliculasController',
     'ventas'=>'VentasController',
     'entradas'=>'EntradaController',
-    'tickets'=>'TicketsController'
+    'tickets'=>'TicketsController',
+    'clientes' => 'ClientesController'
 ]);
 
 Auth::routes();
