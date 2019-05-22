@@ -461,6 +461,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v5.8.18",
             "source": {
                 "type": "git",
@@ -471,6 +472,31 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/9f571be04435883dab6f23ecfadb204273b7f527",
                 "reference": "9f571be04435883dab6f23ecfadb204273b7f527",
+=======
+<<<<<<< HEAD
+            "version": "v5.8.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+=======
+            "version": "v5.8.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "9f571be04435883dab6f23ecfadb204273b7f527"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9f571be04435883dab6f23ecfadb204273b7f527",
+                "reference": "9f571be04435883dab6f23ecfadb204273b7f527",
+>>>>>>> 8a79eb5af8687d6016e5d985c7e0337ab3f33d11
+>>>>>>> 03c67a79b70077a7d9122f29f5347d70abb4b2d5
                 "shasum": ""
             },
             "require": {
@@ -604,7 +630,15 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2019-05-21T16:40:34+00:00"
+=======
+<<<<<<< HEAD
+            "time": "2019-05-14T16:02:41+00:00"
+=======
+            "time": "2019-05-21T16:40:34+00:00"
+>>>>>>> 8a79eb5af8687d6016e5d985c7e0337ab3f33d11
+>>>>>>> 03c67a79b70077a7d9122f29f5347d70abb4b2d5
         },
         {
             "name": "laravel/tinker",

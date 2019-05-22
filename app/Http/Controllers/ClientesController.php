@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Sexos;
-use Illuminate\Http\Request;
+use App\Clientes;
+use Illuminate\Http\Request; 
 
-class SexosController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class SexosController extends Controller
      */
     public function index()
     {
-        $sexos=Sexos::all();
-        //dd($generos);
-        return view("Sexos.index",compact('sexos'));
+        //
     }
 
     /**
@@ -27,7 +25,6 @@ class SexosController extends Controller
     public function create()
     {
         //
-        return view("Sexos.create");
     }
 
     /**
@@ -39,20 +36,15 @@ class SexosController extends Controller
     public function store(Request $request)
     {
         //
-        $sexo=array(
-            "sexo"=>$request->sexo,
-        );
-        Sexos::create($sexo);
-        return redirect("sexos");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function show(Sexos $sexos)
+    public function show(Clientes $clientes)
     {
         //
     }
@@ -60,10 +52,10 @@ class SexosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sexos $sexos)
+    public function edit(Clientes $clientes)
     {
         //
     }
@@ -72,10 +64,10 @@ class SexosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sexos $sexos)
+    public function update(Request $request, Clientes $clientes)
     {
         //
     }
@@ -83,13 +75,11 @@ class SexosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sexos $sexo)
+    public function destroy(Clientes $clientes)
     {
         //
-        $sexo->delete();
-        return redirect("sexos");
     }
 }

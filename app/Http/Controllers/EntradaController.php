@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Sexos;
+use App\Peliculas;
+use App\Formatos;
+use App\Stands;
+use App\Entrada;
 use Illuminate\Http\Request;
 
-class SexosController extends Controller
+class EntradaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +17,8 @@ class SexosController extends Controller
      */
     public function index()
     {
-        $sexos=Sexos::all();
-        //dd($generos);
-        return view("Sexos.index",compact('sexos'));
+        $entradas=Entrada::all();
+        return view("Entradas.index",compact('entradas'));
     }
 
     /**
@@ -26,8 +28,10 @@ class SexosController extends Controller
      */
     public function create()
     {
-        //
-        return view("Sexos.create");
+        $peliculas=Peliculas::all();
+        $formatos=Formatos::all();
+        $stands=Stands::all();
+        return view("entradas.created",compact('peliculas','formatos','stands'));
     }
 
     /**
@@ -38,21 +42,17 @@ class SexosController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $sexo=array(
-            "sexo"=>$request->sexo,
-        );
-        Sexos::create($sexo);
-        return redirect("sexos");
+        Entrada::create($request->all());
+        return redirect("entradas");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Entrada  $entrada
      * @return \Illuminate\Http\Response
      */
-    public function show(Sexos $sexos)
+    public function show(Entrada $entrada)
     {
         //
     }
@@ -60,36 +60,40 @@ class SexosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Entrada  $entrada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sexos $sexos)
+    public function edit(Entrada $entrada)
     {
-        //
+
+        $peliculas=Peliculas::all();
+        $formatos=Formatos::all();
+        $stands=Stands::all();
+        return view("Entradas.create",compact('entrada','peliculas','formatos','stands'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Entrada  $entrada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sexos $sexos)
+    public function update(Request $request, Entrada $entrada)
     {
-        //
+        $entrada->update($request->all());
+        return redirect("entradas");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sexos  $sexos
+     * @param  \App\Entrada  $entrada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sexos $sexo)
+    public function destroy(Entrada $entrada)
     {
-        //
-        $sexo->delete();
-        return redirect("sexos");
+        $entrada->delete();
+        return redirect("entradas");
     }
 }
