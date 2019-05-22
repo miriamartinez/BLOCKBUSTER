@@ -33,10 +33,9 @@
         <li class="nav-item"><a href="{{url("sexos")}}" class="nav-link text-white">Sexos</a></li>
         <li class="nav-item"><a href="{{url("stands")}}" class="nav-link text-white">Stands</a></li>
         <li class="nav-item"><a href="{{url("formatos")}}" class="nav-link text-white">Formatos</a></li>
-<<<<<<< HEAD
         <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
-=======
         <li class="nav-item"><a href="{{url("entradas")}}" class="nav-link text-white">Entradas</a></li>
+        <li class="nav-item"><a href="{{url("tickets")}}" class="nav-link text-white">Tickets</a></li>
         @guest
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
