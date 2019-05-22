@@ -80,6 +80,6 @@ class ClientesController extends Controller
      */
     public function destroy(Clientes $clientes)
     {
-        //
+        //Borrar
     }
 }
