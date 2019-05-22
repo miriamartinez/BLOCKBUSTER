@@ -39,7 +39,7 @@ class StandsController extends Controller
     {
         //
         $stand=array(
-            "descripcion"=>$request->descripcion,
+            "descripcion_s"=>$request->descripcion_s,
         );
         Stands::create($stand);
         return redirect("stands");

@@ -34,6 +34,9 @@
         <li class="nav-item"><a href="{{url("stands")}}" class="nav-link text-white">Stands</a></li>
         <li class="nav-item"><a href="{{url("formatos")}}" class="nav-link text-white">Formatos</a></li>
         <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
+
+        <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
+
         <li class="nav-item"><a href="{{url("entradas")}}" class="nav-link text-white">Entradas</a></li>
         <li class="nav-item"><a href="{{url("tickets")}}" class="nav-link text-white">Tickets</a></li>
         @guest
@@ -50,7 +53,6 @@
                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
->>>>>>> 03c67a79b70077a7d9122f29f5347d70abb4b2d5
 
                 <div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"

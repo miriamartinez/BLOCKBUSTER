@@ -26,7 +26,7 @@
                     <select name="id_formato" id="id_formato">
                         <option value="">Selecciona uno</option>
                         @foreach($formatos as $formato)
-                            <option value="{{$formato->id_formato}}" >{{$formato->descripcion}}</option>
+                            <option value="{{$formato->id_formato}}" >{{$formato->descripcion_f}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -35,7 +35,7 @@
                     <select name="id_stand" id="id_stand">
                         <option value="">Selecciona uno</option>
                         @foreach($stands as $stand)
-                            <option value="{{$stand->id_stand}}" >{{$stand->descripcion}}</option>
+                            <option value="{{$stand->id_stand}}" >{{$stand->descripcion_s}}</option>
                         @endforeach
                     </select>
                 </div>

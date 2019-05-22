@@ -8,5 +8,5 @@ class Formatos extends Model
 {
     protected $table = 'formatos';
     protected $primaryKey='id_formato';
-    protected $fillable=['descripcion'];
+    protected $fillable=['descripcion_f'];
 }
