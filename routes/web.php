@@ -20,12 +20,8 @@ Route::resources([
     'stands'=>'StandsController',
     'formatos'=>'FormatosController',
     'peliculas'=>'PeliculasController',
-<<<<<<< HEAD
-    'ventas'=>'VentasController'
-
-=======
+    'ventas'=>'VentasController',
     'entradas'=>'EntradaController',
->>>>>>> 03c67a79b70077a7d9122f29f5347d70abb4b2d5
 ]);
 
 Auth::routes();
