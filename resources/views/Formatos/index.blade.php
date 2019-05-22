@@ -22,7 +22,7 @@
                 @foreach($formatos as $formato)
                     <tr>
                         <td>{{$formato->id_formato}}</td>
-                        <td>{{$formato->descripcion}}</td>
+                        <td>{{$formato->descripcion_f}}</td>
                         <td>
                             <form action="{{route("formatos.destroy",$formato->id_formato)}}" method="post">
                                 @csrf

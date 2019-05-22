@@ -22,7 +22,7 @@
                 @foreach($stands as $stand)
                     <tr>
                         <td>{{$stand->id_stand}}</td>
-                        <td>{{$stand->descripcion}}</td>
+                        <td>{{$stand->descripcion_s}}</td>
                         <td>
                             <form action="{{route("stands.destroy",$stand->id_stand)}}" method="post">
                                 @csrf

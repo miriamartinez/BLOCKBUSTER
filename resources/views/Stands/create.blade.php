@@ -13,8 +13,8 @@
             <form action="{{url("stands")}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="descripcion">Stand</label>
-                    <input type="text" id="descripcion" name="descripcion" class="form-control"  placeholder="descripcion">
+                    <label for="descripcion_s">Stand</label>
+                    <input type="text" id="descripcion_s" name="descripcion_s" class="form-control"  placeholder="descripcion">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>

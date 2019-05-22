@@ -26,7 +26,7 @@
                     <label for="id_formato">Formatos</label>
                     <select name="id_formato" id="id_formato">
                         @foreach($formatos as $formato)
-                            <option value="{{$formato->id_formato}}" {{$formato->id_formato==$formato->id_formato?"selected":""}}>{{$formato->descripcion}}</option>
+                            <option value="{{$formato->id_formato}}" {{$formato->id_formato==$formato->id_formato?"selected":""}}>{{$formato->descripcion_f}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -35,7 +35,7 @@
                     <label for="id_stand">Estand</label>
                     <select name="id_stand" id="id_stand">
                         @foreach($stands as $stand)
-                            <option value="{{$stand->id_stand}}" {{$stand->id_stand==$formato->id_stand?"selected":""}}>{{$stand->descripcion}}</option>
+                            <option value="{{$stand->id_stand}}" {{$stand->id_stand==$formato->id_stand?"selected":""}}>{{$stand->descripcion_s}}</option>
                         @endforeach
                     </select>
                 </div>

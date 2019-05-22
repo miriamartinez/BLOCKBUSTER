@@ -37,7 +37,7 @@ class FormatosController extends Controller
     public function store(Request $request)
     {
         $formato=array(
-            "descripcion"=>$request->descripcion,
+            "descripcion_f"=>$request->descripcion_f,
         );
         Formatos::create($formato);
         return redirect("formatos");
