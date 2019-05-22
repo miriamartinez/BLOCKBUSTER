@@ -22,7 +22,7 @@ class Entrada extends Model
 
     function getStands()
     {
-        return $this->hasMany('App\Stands','id_formato','id_formato');
+        return $this->hasMany('App\Stands','id_stand','id_stand');
     }
 
 }

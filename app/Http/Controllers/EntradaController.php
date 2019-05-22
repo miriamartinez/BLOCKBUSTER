@@ -17,7 +17,7 @@ class EntradaController extends Controller
      */
     public function index()
     {
-        $entradas=Proyecto::all();
+        $entradas=Entrada::all();
         return view("Entradas.index",compact('entradas'));
     }
 
@@ -31,7 +31,7 @@ class EntradaController extends Controller
         $peliculas=Peliculas::all();
         $formatos=Formatos::all();
         $stands=Stands::all();
-        return view("Entradas.create",compact('tipos','companias','zonas','municipios','estados'));
+        return view("entradas.created",compact('peliculas','formatos','stands'));
     }
 
     /**
@@ -42,7 +42,8 @@ class EntradaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Entrada::create($request->all());
+        return redirect("entradas");
     }
 
     /**
@@ -64,7 +65,11 @@ class EntradaController extends Controller
      */
     public function edit(Entrada $entrada)
     {
-        //
+
+        $peliculas=Peliculas::all();
+        $formatos=Formatos::all();
+        $stands=Stands::all();
+        return view("Entradas.create",compact('entrada','peliculas','formatos','stands'));
     }
 
     /**
@@ -76,7 +81,8 @@ class EntradaController extends Controller
      */
     public function update(Request $request, Entrada $entrada)
     {
-        //
+        $entrada->update($request->all());
+        return redirect("entradas");
     }
 
     /**
@@ -87,6 +93,7 @@ class EntradaController extends Controller
      */
     public function destroy(Entrada $entrada)
     {
-        //
+        $entrada->delete();
+        return redirect("entradas");
     }
 }
