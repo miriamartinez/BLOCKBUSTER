@@ -13,7 +13,7 @@ class GenerosController extends Controller
     {
         $generos=Generos::all();
         //dd($generos);
-        return view("generos.index",compact('generos'));
+        return view("Generos.index",compact('generos'));
     }
     /**
      * Show the form for creating a new resource.
@@ -23,7 +23,7 @@ class GenerosController extends Controller
     public function create()
     {
         //
-        return view("generos.create");
+        return view("Generos.create");
     }
     /**
      * Store a newly created resource in storage.

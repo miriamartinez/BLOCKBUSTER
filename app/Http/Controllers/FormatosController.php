@@ -15,7 +15,7 @@ class FormatosController extends Controller
     public function index()
     {
         $formatos=Formatos::all();
-        return view("formatos.index",compact('formatos'));
+        return view("Formatos.index",compact('formatos'));
     }
 
     /**
@@ -25,7 +25,7 @@ class FormatosController extends Controller
      */
     public function create()
     {
-        return view("formatos.create");
+        return view("Formatos.create");
     }
 
     /**
