@@ -60,9 +60,9 @@ class FormatosController extends Controller
      * @param  \App\Formatos  $formatos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Formatos $formatos)
+    public function edit(Formatos $formato)
     {
-        //
+        return view("Formatos.edit",compact('formato'));
     }
 
     /**
@@ -72,9 +72,10 @@ class FormatosController extends Controller
      * @param  \App\Formatos  $formatos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Formatos $formatos)
+    public function update(Request $request, Formatos $formato)
     {
-        //
+        $formato->update($request->all());
+        return redirect("formatos");
     }
 
     /**

@@ -16,9 +16,11 @@
                     <th>ID</th>
                     <th>cantidad</th>
                     <th>subtotal</th>
-                    <th>id_entrada</th>
-                    <th>id_entrada</th>
+                    <th>Entrada</th>
+                    <th>Ticket</th>
+                    @if(Auth::user()->id_tipo==1 )
                     <th colspan="2">Acciones</th>
+                        @endif
                 </tr>
                 </thead>
                 <tbody>
@@ -29,7 +31,7 @@
                         <td>{{$venta->subtotal}}</td>
                         <td>{{$venta->id_entrada}}</td>
                         <td>{{$venta->id_ticket}}</td>
-
+                        @if(Auth::user()->id_tipo==1 )
                         <td>
                             <form action="{{route("ventas.destroy",$venta->id_venta)}}" method="post">
                                 @csrf
@@ -40,6 +42,7 @@
                         <td>
                             <a href="{{url("ventas",$venta->id_venta)}}/edit" class="btn btn-outline-success"><i class="far fa-edit"></i> </a>
                         </td>
+                         @endif
                     </tr>
                 @endforeach
                 </tbody>

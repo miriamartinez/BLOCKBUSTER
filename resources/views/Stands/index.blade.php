@@ -30,7 +30,9 @@
                                 <button class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
-                        <td></td>
+                        <td>
+                            <a href="{{url("stands",$stand->id_stand)}}/edit" class="btn btn-outline-success"><i class="far fa-edit"></i> </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
