@@ -62,9 +62,9 @@ class StandsController extends Controller
      * @param  \App\Stands  $stands
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stands $stands)
+    public function edit(Stands $stand)
     {
-        //
+        return view("stands.edit",compact('stand'));
     }
 
     /**
@@ -74,9 +74,10 @@ class StandsController extends Controller
      * @param  \App\Stands  $stands
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Stands $stands)
+    public function update(Request $request, Stands $stand)
     {
-        //
+        $stand->update($request->all());
+        return redirect("stands");
     }
 
     /**

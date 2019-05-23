@@ -26,21 +26,13 @@
                 <input type="text" placeholder="Search">
             </div>
         </li>
-        <li class="nav-item"><a href="" class="nav-link text-white">Inicio</a></li>
-        <li class="nav-item"><a href="" class="nav-link text-white">Compras</a></li>
+        <li class="nav-item"><a href="/home" class="nav-link text-white">Inicio</a></li>
+
         <li class="nav-item"><a href="{{url("peliculas")}}" class="nav-link text-white">Peliculas</a></li>
-        <li class="nav-item"><a href="{{url("generos")}}" class="nav-link text-white">Generos</a></li>
-        <li class="nav-item"><a href="{{url("sexos")}}" class="nav-link text-white">Sexos</a></li>
-        <li class="nav-item"><a href="{{url("stands")}}" class="nav-link text-white">Stands</a></li>
-        <li class="nav-item"><a href="{{url("formatos")}}" class="nav-link text-white">Formatos</a></li>
-        <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
 
-        <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
 
-        <li class="nav-item"><a href="{{url("entradas")}}" class="nav-link text-white">Entradas</a></li>
-        <li class="nav-item"><a href="{{url("clientes")}}" class="nav-link text-white">Clientes</a></li>
 
-        <li class="nav-item"><a href="{{url("tickets")}}" class="nav-link text-white">Tickets</a></li>
+
         @guest
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -51,6 +43,20 @@
                 </li>
             @endif
         @else
+
+            @if(Auth::user()->id_tipo==1)
+                <li class="nav-item"><a href="{{url("generos")}}" class="nav-link text-white">Generos</a></li>
+                <li class="nav-item"><a href="{{url("stands")}}" class="nav-link text-white">Stands</a></li>
+                <li class="nav-item"><a href="{{url("formatos")}}" class="nav-link text-white">Formatos</a></li>
+                <li class="nav-item"><a href="{{url("entradas")}}" class="nav-link text-white">Entradas</a></li>
+                <li class="nav-item"><a href="{{url("tickets")}}" class="nav-link text-white">Tickets</a></li>
+                <li class="nav-item"><a href="{{url("clientes")}}" class="nav-link text-white">Clientes</a></li>
+            @else
+                <li class="nav-item"><a href="{{url("ventas")}}" class="nav-link text-white">Ventas</a></li>
+
+            @endif
+
+
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
