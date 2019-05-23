@@ -83,7 +83,7 @@
     @yield("content")
 </main>
 <footer class="bg-primary text-center">
-    <span class="text-warning"> Powered by victor</span>
+    <span class="text-warning"> Powered by Grupo 602</span>
 </footer>
 </body>
 </html>
