@@ -2,7 +2,11 @@
 @extends('Layauts.layaut')
 
 @section("content")
-
+    <br><br>
+    <h1 class="bg-primary text-white text-center">Info Clientes</h1>
+    <div class="row">
+        <div class="col"><a href="{{url("clientes")}}"></a></div>
+    </div>
     <table class="table table-light table-hover" >
         <thead class="thead-light">
         <tr >
@@ -22,18 +26,18 @@
                 <td>{{$cliente->nom}}</td>
                 <td>{{$cliente->ap}}</td>
                 <td>{{$cliente->am}}</td>
-                <td>{{$cliente->id_sexo}}</td>
+                <td>{{isset($cliente->getSexo[0])?$cliente->getSexo[0]->sexo:""}}</td>
+
                 <td>
-
-                    <a href="{{ url('/clientes/'.$cliente->id_cliente.'/edit') }}" class="btn btn-warning" >
-                        Editar
-                    </a>
-
-                    <form method="post" action="{{url('/clientes/'.$cliente->id_cliente )}}" style="display:inline">
-                        {{csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <button  type="submit" onclick="return confirm('¿Borrar?');" class="btn btn-danger">Borrar</button>
+                    <a href="{{route("clientes.edit",$cliente->id_cliente)}}" class="btn btn-outline-primary" name="actualizar"><i class="far fa-edit"></i></a>
+                </td>
+                <td>
+                    <form action="{{url("clientes")."/".$cliente->id_cliente}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button href="" class="btn btn-outline-danger" name="eliminar"><i class="fas fa-minus-circle"></i></button>
                     </form>
+                </td>
 
                 </td>
 

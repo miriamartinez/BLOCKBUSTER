@@ -57,9 +57,9 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Clientes $clientes)
+    public function edit(Clientes $cliente)
     {
-        //
+        return view("clientes.edit",compact('cliente'));
     }
 
     /**
@@ -69,9 +69,11 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clientes $clientes)
+    public function update(Request $request, Clientes $cliente)
     {
-        //
+        $cliente->update($request->all());
+        return redirect("clientes");
+
     }
 
     /**
@@ -80,10 +82,10 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Clientes $clientes)
+    public function destroy(Clientes $cliente)
     {
         //
-        $clientes->delete();
+        $cliente->delete();
         return redirect("clientes");
     }
 }
