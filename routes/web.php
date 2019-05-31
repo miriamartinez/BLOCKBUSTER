@@ -14,15 +14,38 @@
 Route::get('/', function () {
     return view('Layauts.layaut');
 });
-Route::resources([
-    'generos'=>'GenerosController',
-    'sexos'=>'SexosController',
-    'stands'=>'StandsController',
-    'formatos'=>'FormatosController',
-    'peliculas'=>'PeliculasController',
-    'ventas'=>'VentasController',
-    'entradas'=>'EntradaController',
-]);
+
+Route::group(["middleware"=>["auth"]],function () {
+
+    Route::group(["middleware"=>["userverify"]],function ()
+    {
+        Route::resources([
+
+            'sexos' => 'SexosController',
+            'stands' => 'StandsController',
+            'formatos' => 'FormatosController',
+            'entradas' => 'EntradaController',
+        ]);
+    });
+
+
+    Route::resources([
+
+        'peliculas' => 'PeliculasController',
+        'ventas' => 'VentasController',
+
+    ]);
+    Route::resource("generos","GenerosController")->except(["index"]);
+});
+
+Route::get("generos","GenerosController@index");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
