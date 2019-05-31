@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Tickets;
 use App\Clientes;
 use Illuminate\Http\Request;
 
-class ClientesController extends Controller
+class TicketsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class ClientesController extends Controller
     public function index()
     {
         //
-        $clientes=Clientes::all();
-        return view("clientes.index",compact('clientes'));
+        $tickets=Tickets::all();
+        return view("Tickets.index",compact('tickets'));
     }
 
     /**
@@ -27,6 +28,9 @@ class ClientesController extends Controller
     public function create()
     {
         //
+        $clientes=Clientes::all();
+        return view("Tickets.create",compact('clientes'));
+
     }
 
     /**
@@ -38,54 +42,61 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
         //
+        Tickets::create($request->all());
+        return redirect("tickets");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Clientes  $clientes
+     * @param  \App\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function show(Clientes $clientes)
+    public function show(Tickets $tickets)
     {
         //
+
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Clientes  $clientes
+     * @param  \App\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function edit(Clientes $cliente)
+    public function edit(Tickets $ticket)
     {
-        return view("clientes.edit",compact('cliente'));
+        //
+        $clientes=Clientes::all();
+        return view("Tickets.edit",compact('ticket','clientes'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Clientes  $clientes
+     * @param  \App\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clientes $cliente)
+    public function update(Request $request, Tickets $ticket)
     {
-        $cliente->update($request->all());
-        return redirect("clientes");
-
+        //
+        $ticket->update($request->all());
+        return redirect("tickets");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Clientes  $clientes
+     * @param  \App\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Clientes $cliente)
+    public function destroy(Tickets $ticket)
     {
         //
-        $cliente->delete();
-        return redirect("clientes");
+        $ticket->delete();
+        return redirect("tickets");
     }
 }

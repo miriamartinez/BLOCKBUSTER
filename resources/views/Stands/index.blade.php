@@ -22,7 +22,7 @@
                 @foreach($stands as $stand)
                     <tr>
                         <td>{{$stand->id_stand}}</td>
-                        <td>{{$stand->descripcion}}</td>
+                        <td>{{$stand->descripcion_s}}</td>
                         <td>
                             <form action="{{route("stands.destroy",$stand->id_stand)}}" method="post">
                                 @csrf
@@ -30,7 +30,9 @@
                                 <button class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
-                        <td></td>
+                        <td>
+                            <a href="{{url("stands",$stand->id_stand)}}/edit" class="btn btn-outline-success"><i class="far fa-edit"></i> </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
